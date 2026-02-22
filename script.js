@@ -7,3 +7,14 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   }
 });
+document.addEventListener("DOMContentLoaded", function () {
+
+  const addCartButtons = document.querySelectorAll(".addCartBtn");
+
+  addCartButtons.forEach(function(button) {
+    button.addEventListener("click", function() {
+      alert("Item added to the cart.");
+    });
+  });
+
+});
