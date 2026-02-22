@@ -18,3 +18,10 @@ document.addEventListener("DOMContentLoaded", function () {
   });
 
 });
+const clearCartBtn = document.getElementById("clearCartBtn");
+
+if (clearCartBtn) {
+  clearCartBtn.addEventListener("click", function () {
+    alert("Your cart has been cleared.");
+  });
+}
