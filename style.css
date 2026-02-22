@@ -546,3 +546,125 @@ footer {
     object-fit: cover;
     border-radius: 10px;
 }
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: #f4f1ec;
+    color: #333;
+}
+
+header {
+    background: linear-gradient(to right, #4a342e, #6d4c41);
+    color: white;
+    padding: 30px 20px;
+    text-align: center;
+}
+
+nav a {
+    color: white;
+    margin: 0 15px;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.hero {
+    padding: 80px 20px;
+    text-align: center;
+}
+
+.btn {
+    display: inline-block;
+    padding: 12px 25px;
+    background: #4a342e;
+    color: white;
+    text-decoration: none;
+    border-radius: 6px;
+    margin-top: 20px;
+}
+
+.features {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    padding: 60px 10%;
+    flex-wrap: wrap;
+}
+
+.feature-card {
+    background: white;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.08);
+    width: 250px;
+    text-align: center;
+}
+
+.page-header {
+    text-align: center;
+    padding: 60px 20px;
+}
+
+.gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 30px;
+    padding: 60px 10%;
+}
+
+.book-card {
+    background: white;
+    border-radius: 12px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.08);
+    padding: 20px;
+    text-align: center;
+}
+
+.book-card img {
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+    border-radius: 10px;
+}
+
+.about-section {
+    padding: 80px 10%;
+}
+
+.contact-section {
+    max-width: 600px;
+    margin: 80px auto;
+    padding: 40px;
+    background: white;
+    border-radius: 12px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.08);
+}
+
+.contact-form {
+    display: flex;
+    flex-direction: column;
+}
+
+.contact-form input,
+.contact-form textarea {
+    margin-top: 10px;
+    padding: 12px;
+    border-radius: 6px;
+    border: 1px solid #ccc;
+}
+
+.contact-form button {
+    margin-top: 20px;
+    padding: 14px;
+    background: #4a342e;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+}
+
+footer {
+    background: #2f1f1a;
+    color: white;
+    text-align: center;
+    padding: 20px;
+}
