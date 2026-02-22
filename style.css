@@ -82,3 +82,12 @@ input[type="submit"] {
 input[type="submit"]:hover {
     background-color: #7A9E7E;
 }
+/* Events Page Styling */
+.event {
+    background-color: #ffffff;
+    margin: 20px auto;
+    padding: 15px;
+    max-width: 600px;
+    border-left: 5px solid #7A9E7E;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+}
