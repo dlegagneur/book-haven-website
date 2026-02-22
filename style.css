@@ -202,3 +202,8 @@ section {
     font-weight: bold;
     color: #4A2C2A;
 }
+.item {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
