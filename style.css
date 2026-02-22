@@ -489,3 +489,34 @@ footer {
     text-align: center;
     padding: 20px;
 }
+.page-header {
+    text-align: center;
+    padding: 60px 20px;
+    background: #f4f1ec;
+}
+
+.gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 30px;
+    padding: 60px 10%;
+}
+
+.book-card {
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.08);
+    padding: 20px;
+    text-align: center;
+    transition: transform 0.3s ease;
+}
+
+.book-card:hover {
+    transform: translateY(-5px);
+}
+
+.book-card img {
+    width: 100%;
+    border-radius: 8px;
+    margin-bottom: 15px;
+}
