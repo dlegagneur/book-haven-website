@@ -15,6 +15,23 @@ document.addEventListener("DOMContentLoaded", function () {
 
             alert("Item added to the cart.");
         });
+        const clearCartButtons = document.querySelectorAll(".clearCartBtn");
+
+clearCartButtons.forEach(function(button) {
+    button.addEventListener("click", function() {
+
+        // Remove cart from sessionStorage
+        sessionStorage.removeItem("cart");
+
+        // Optional: clear modal list if open
+        if (cartItemsList) {
+            cartItemsList.innerHTML = "";
+        }
+
+        alert("Your cart has been cleared.");
+
+    });
+});
     });
 
     const viewCartBtn = document.getElementById("viewCartBtn");
