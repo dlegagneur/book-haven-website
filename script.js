@@ -24,7 +24,4 @@ if (clearCartBtn) {
   clearCartBtn.addEventListener("click", function () {
     alert("Your cart has been cleared.");
   });
-}
-document.addEventListener("DOMContentLoaded", function() {
-  alert("Script loaded correctly.");
-});
+};
