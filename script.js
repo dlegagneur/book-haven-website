@@ -46,3 +46,19 @@ if (contactForm) {
         alert("Thank you for your message.");
     });
 }
+const addCartButtons = document.querySelectorAll(".addCartBtn");
+
+addCartButtons.forEach(function(button) {
+    button.addEventListener("click", function() {
+
+        const itemName = this.parentElement.querySelector("h3").textContent;
+
+        let cart = JSON.parse(sessionStorage.getItem("cart")) || [];
+
+        cart.push(itemName);
+
+        sessionStorage.setItem("cart", JSON.stringify(cart));
+
+        alert("Item added to the cart.");
+    });
+});
