@@ -25,3 +25,6 @@ if (clearCartBtn) {
     alert("Your cart has been cleared.");
   });
 }
+document.addEventListener("DOMContentLoaded", function() {
+  alert("Script loaded correctly.");
+});
