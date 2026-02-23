@@ -77,5 +77,29 @@ clearCartButtons.forEach(function(button) {
 
         });
     }
+    // CUSTOM ORDER (Contact Form - localStorage)
+    const contactForm = document.getElementById("contactForm");
 
+    if (contactForm) {
+        contactForm.addEventListener("submit", function (event) {
+
+            event.preventDefault();
+
+            const name = document.getElementById("name").value;
+            const email = document.getElementById("email").value;
+            const message = document.getElementById("message").value;
+
+            const orderData = {
+                customerName: name,
+                customerEmail: email,
+                orderDetails: message
+            };
+
+            localStorage.setItem("customOrder", JSON.stringify(orderData));
+
+            alert("Custom order submitted successfully.");
+
+            contactForm.reset();
+        });
+    }
 });
