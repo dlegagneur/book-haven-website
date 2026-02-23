@@ -1,64 +1,56 @@
 document.addEventListener("DOMContentLoaded", function () {
 
-    // Subscribe Button
-    const subscribeBtn = document.getElementById("subscribeBtn");
-
-    if (subscribeBtn) {
-        subscribeBtn.addEventListener("click", function () {
-            alert("Thank you for subscribing.");
-        });
-    }
-
-    // Add to Cart Buttons
+    // ADD TO CART
     const addCartButtons = document.querySelectorAll(".addCartBtn");
 
     addCartButtons.forEach(function(button) {
         button.addEventListener("click", function() {
+
+            const itemName = this.parentElement.querySelector("h3").textContent;
+
+            let cart = JSON.parse(sessionStorage.getItem("cart")) || [];
+
+            cart.push(itemName);
+
+            sessionStorage.setItem("cart", JSON.stringify(cart));
+
             alert("Item added to the cart.");
         });
     });
 
-    // Clear Cart Buttons
-    const clearCartButtons = document.querySelectorAll(".clearCartBtn");
 
-    clearCartButtons.forEach(function(button) {
-        button.addEventListener("click", function() {
-            alert("Cart cleared.");
-        });
-    });
+    // VIEW CART
+    const viewCartBtn = document.getElementById("viewCartBtn");
+    const cartModal = document.getElementById("cartModal");
+    const closeCart = document.getElementById("closeCart");
+    const cartItemsList = document.getElementById("cartItems");
 
-    // Process Order Button
-    const processOrderBtn = document.getElementById("processOrderBtn");
+    if (viewCartBtn) {
+        viewCartBtn.addEventListener("click", function () {
 
-    if (processOrderBtn) {
-        processOrderBtn.addEventListener("click", function () {
-            alert("Thank you for your order.");
+            const cart = JSON.parse(sessionStorage.getItem("cart")) || [];
+
+            cartItemsList.innerHTML = "";
+
+            if (cart.length === 0) {
+                cartItemsList.innerHTML = "<li>Your cart is empty.</li>";
+            } else {
+                cart.forEach(function(item) {
+                    const li = document.createElement("li");
+                    li.textContent = item;
+                    cartItemsList.appendChild(li);
+                });
+            }
+
+            cartModal.style.display = "block";
         });
     }
 
-});
-// Contact Form Submission Alert
-const contactForm = document.getElementById("contactForm");
+    // CLOSE CART
+    if (closeCart) {
+        closeCart.addEventListener("click", function () {
+            cartModal.style.display = "none";
+        });
+    }
 
-if (contactForm) {
-    contactForm.addEventListener("submit", function (event) {
-        event.preventDefault();
-        alert("Thank you for your message.");
-    });
-}
-const addCartButtons = document.querySelectorAll(".addCartBtn");
-
-addCartButtons.forEach(function(button) {
-    button.addEventListener("click", function() {
-
-        const itemName = this.parentElement.querySelector("h3").textContent;
-
-        let cart = JSON.parse(sessionStorage.getItem("cart")) || [];
-
-        cart.push(itemName);
-
-        sessionStorage.setItem("cart", JSON.stringify(cart));
-
-        alert("Item added to the cart.");
-    });
 });
