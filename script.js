@@ -1,4 +1,5 @@
 document.addEventListener("DOMContentLoaded", function () {
+
   const subscribeBtn = document.getElementById("subscribeBtn");
 
   if (subscribeBtn) {
@@ -6,8 +7,6 @@ document.addEventListener("DOMContentLoaded", function () {
       alert("Thank you for subscribing.");
     });
   }
-});
-document.addEventListener("DOMContentLoaded", function () {
 
   const addCartButtons = document.querySelectorAll(".addCartBtn");
 
@@ -17,24 +16,20 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   });
 
-});
-const clearCartBtn = document.getElementById("clearCartBtn");
+  const clearCartButtons = document.querySelectorAll(".clearCartBtn");
 
-if (clearCartBtn) {
-  clearCartBtn.addEventListener("click", function () {
-    alert("Your cart has been cleared.");
+  clearCartButtons.forEach(function(button) {
+    button.addEventListener("click", function() {
+      alert("Your cart has been cleared.");
+    });
   });
-};
-</section>  <!-- end of gallery-grid -->
 
-<section class="cart-actions">
-  <button id="processOrderBtn" class="btn">Process Order</button>
-</section>
+  const processOrderBtn = document.getElementById("processOrderBtn");
 
-<footer>
-  <p>© 2026 Book Haven Bookstore</p>
-</footer>
+  if (processOrderBtn) {
+    processOrderBtn.addEventListener("click", function () {
+      alert("Thank you for your order.");
+    });
+  }
 
-<script src="script.js"></script>
-</body>
-</html>
+});
