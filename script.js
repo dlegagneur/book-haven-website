@@ -1,6 +1,8 @@
 document.addEventListener("DOMContentLoaded", function () {
 
-    // ADD TO CART
+    // ==============================
+    // ADD TO CART (sessionStorage)
+    // ==============================
     const addCartButtons = document.querySelectorAll(".addCartBtn");
 
     addCartButtons.forEach(function(button) {
@@ -19,19 +21,29 @@ document.addEventListener("DOMContentLoaded", function () {
     });
 
 
+    // ==============================
     // CLEAR CART
+    // ==============================
     const clearCartButtons = document.querySelectorAll(".clearCartBtn");
 
-clearCartButtons.forEach(function(button) {
-    button.addEventListener("click", function () {
+    clearCartButtons.forEach(function(button) {
+        button.addEventListener("click", function () {
 
-        alert("Clear button clicked");
+            sessionStorage.removeItem("cart");
 
-        sessionStorage.removeItem("cart");
+            const cartItemsList = document.getElementById("cartItems");
+            if (cartItemsList) {
+                cartItemsList.innerHTML = "";
+            }
 
+            alert("Your cart has been cleared.");
+        });
     });
-});
-    // VIEW CART (MODAL)
+
+
+    // ==============================
+    // VIEW CART (Modal)
+    // ==============================
     const viewCartBtn = document.getElementById("viewCartBtn");
     const cartModal = document.getElementById("cartModal");
     const closeCart = document.getElementById("closeCart");
@@ -65,7 +77,9 @@ clearCartButtons.forEach(function(button) {
     }
 
 
+    // ==============================
     // PROCESS ORDER
+    // ==============================
     const processOrderBtn = document.getElementById("processOrderBtn");
 
     if (processOrderBtn) {
@@ -77,7 +91,11 @@ clearCartButtons.forEach(function(button) {
 
         });
     }
-    // CUSTOM ORDER (Contact Form - localStorage)
+
+
+    // ==============================
+    // CONTACT FORM → localStorage
+    // ==============================
     const contactForm = document.getElementById("contactForm");
 
     if (contactForm) {
@@ -102,4 +120,17 @@ clearCartButtons.forEach(function(button) {
             contactForm.reset();
         });
     }
+
+
+    // ==============================
+    // SUBSCRIBE BUTTON ALERT
+    // ==============================
+    const subscribeBtn = document.getElementById("subscribeBtn");
+
+    if (subscribeBtn) {
+        subscribeBtn.addEventListener("click", function () {
+            alert("Thank you for subscribing.");
+        });
+    }
+
 });
