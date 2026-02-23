@@ -22,21 +22,15 @@ document.addEventListener("DOMContentLoaded", function () {
     // CLEAR CART
     const clearCartButtons = document.querySelectorAll(".clearCartBtn");
 
-    clearCartButtons.forEach(function(button) {
-        button.addEventListener("click", function () {
+clearCartButtons.forEach(function(button) {
+    button.addEventListener("click", function () {
 
-            sessionStorage.removeItem("cart");
+        alert("Clear button clicked");
 
-            const cartItemsList = document.getElementById("cartItems");
-            if (cartItemsList) {
-                cartItemsList.innerHTML = "";
-            }
+        sessionStorage.removeItem("cart");
 
-            alert("Your cart has been cleared.");
-        });
     });
-
-
+});
     // VIEW CART (MODAL)
     const viewCartBtn = document.getElementById("viewCartBtn");
     const cartModal = document.getElementById("cartModal");
