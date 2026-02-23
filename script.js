@@ -1,9 +1,10 @@
 document.addEventListener("DOMContentLoaded", function () {
 
+    // ADD TO CART
     const addCartButtons = document.querySelectorAll(".addCartBtn");
 
     addCartButtons.forEach(function(button) {
-        button.addEventListener("click", function() {
+        button.addEventListener("click", function () {
 
             const itemName = this.parentElement.querySelector("h3").textContent;
 
@@ -15,25 +16,28 @@ document.addEventListener("DOMContentLoaded", function () {
 
             alert("Item added to the cart.");
         });
-        const clearCartButtons = document.querySelectorAll(".clearCartBtn");
-
-clearCartButtons.forEach(function(button) {
-    button.addEventListener("click", function() {
-
-        // Remove cart from sessionStorage
-        sessionStorage.removeItem("cart");
-
-        // Optional: clear modal list if open
-        if (cartItemsList) {
-            cartItemsList.innerHTML = "";
-        }
-
-        alert("Your cart has been cleared.");
-
-    });
-});
     });
 
+
+    // CLEAR CART
+    const clearCartButtons = document.querySelectorAll(".clearCartBtn");
+
+    clearCartButtons.forEach(function(button) {
+        button.addEventListener("click", function () {
+
+            sessionStorage.removeItem("cart");
+
+            const cartItemsList = document.getElementById("cartItems");
+            if (cartItemsList) {
+                cartItemsList.innerHTML = "";
+            }
+
+            alert("Your cart has been cleared.");
+        });
+    });
+
+
+    // VIEW CART (MODAL)
     const viewCartBtn = document.getElementById("viewCartBtn");
     const cartModal = document.getElementById("cartModal");
     const closeCart = document.getElementById("closeCart");
@@ -42,7 +46,7 @@ clearCartButtons.forEach(function(button) {
     if (viewCartBtn) {
         viewCartBtn.addEventListener("click", function () {
 
-            const cart = JSON.parse(sessionStorage.getItem("cart")) || [];
+            let cart = JSON.parse(sessionStorage.getItem("cart")) || [];
 
             cartItemsList.innerHTML = "";
 
@@ -66,4 +70,18 @@ clearCartButtons.forEach(function(button) {
         });
     }
 
-});                
+
+    // PROCESS ORDER
+    const processOrderBtn = document.getElementById("processOrderBtn");
+
+    if (processOrderBtn) {
+        processOrderBtn.addEventListener("click", function () {
+
+            sessionStorage.removeItem("cart");
+
+            alert("Thank you for your order!");
+
+        });
+    }
+
+});
