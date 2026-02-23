@@ -1,3 +1,4 @@
+alert("Script is connected.");
 document.addEventListener("DOMContentLoaded", function () {
   const subscribeBtn = document.getElementById("subscribeBtn");
 
