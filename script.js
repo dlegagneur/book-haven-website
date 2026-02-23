@@ -37,3 +37,12 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 
 });
+// Contact Form Submission Alert
+const contactForm = document.getElementById("contactForm");
+
+if (contactForm) {
+    contactForm.addEventListener("submit", function (event) {
+        event.preventDefault();
+        alert("Thank you for your message.");
+    });
+}
