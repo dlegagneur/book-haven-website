@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
 </head>
-    <script src="script.js"></script>
+
 <body>
 
 <header>
@@ -21,27 +21,37 @@
 
 <section class="contact-section">
     <h2>Contact Us</h2>
-    <form class="contact-form">
-        <label for="name">Full Name</label>
+
+    <form id="contactForm" class="contact-form">
+
+        <label for="name">Full Name:</label>
         <input type="text" id="name" required>
 
-        <label for="email">Email</label>
+        <label for="email">Email:</label>
         <input type="email" id="email" required>
 
-        <label for="message">Message</label>
+        <label for="message">Message:</label>
         <textarea id="message" rows="5" required></textarea>
 
-        <button type="submit">Send Message</button>
+        <button type="submit" class="btn">
+            Send Message
+        </button>
+
     </form>
-    <section class="subscribe-section">
-  <h3>Stay Connected</h3>
-  <p>Subscribe to receive updates about new books and events.</p>
-  <button id="subscribeBtn" class="btn">Subscribe</button>
+</section>
+
+<section class="subscribe-section">
+    <h3>Stay Connected</h3>
+    <p>Subscribe to receive updates about new books and events.</p>
+    <button id="subscribeBtn" class="btn">
+        Subscribe
+    </button>
 </section>
 
 <footer>
     <p>© 2026 Book Haven Bookstore</p>
 </footer>
 
+<script src="script.js"></script>
 </body>
 </html>
