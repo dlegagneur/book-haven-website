@@ -1,35 +1,39 @@
 document.addEventListener("DOMContentLoaded", function () {
 
-  const subscribeBtn = document.getElementById("subscribeBtn");
+    // Subscribe Button
+    const subscribeBtn = document.getElementById("subscribeBtn");
 
-  if (subscribeBtn) {
-    subscribeBtn.addEventListener("click", function () {
-      alert("Thank you for subscribing.");
+    if (subscribeBtn) {
+        subscribeBtn.addEventListener("click", function () {
+            alert("Thank you for subscribing.");
+        });
+    }
+
+    // Add to Cart Buttons
+    const addCartButtons = document.querySelectorAll(".addCartBtn");
+
+    addCartButtons.forEach(function(button) {
+        button.addEventListener("click", function() {
+            alert("Item added to the cart.");
+        });
     });
-  }
 
-  const addCartButtons = document.querySelectorAll(".addCartBtn");
+    // Clear Cart Buttons
+    const clearCartButtons = document.querySelectorAll(".clearCartBtn");
 
-  addCartButtons.forEach(function(button) {
-    button.addEventListener("click", function() {
-      alert("Item added to the cart.");
+    clearCartButtons.forEach(function(button) {
+        button.addEventListener("click", function() {
+            alert("Cart cleared.");
+        });
     });
-  });
 
-  const clearCartButtons = document.querySelectorAll(".clearCartBtn");
+    // Process Order Button
+    const processOrderBtn = document.getElementById("processOrderBtn");
 
-  clearCartButtons.forEach(function(button) {
-    button.addEventListener("click", function() {
-      alert("Your cart has been cleared.");
-    });
-  });
-
-  const processOrderBtn = document.getElementById("processOrderBtn");
-
-  if (processOrderBtn) {
-    processOrderBtn.addEventListener("click", function () {
-      alert("Thank you for your order.");
-    });
-  }
+    if (processOrderBtn) {
+        processOrderBtn.addEventListener("click", function () {
+            alert("Thank you for your order.");
+        });
+    }
 
 });
