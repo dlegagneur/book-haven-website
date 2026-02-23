@@ -25,3 +25,16 @@ if (clearCartBtn) {
     alert("Your cart has been cleared.");
   });
 };
+</section>  <!-- end of gallery-grid -->
+
+<section class="cart-actions">
+  <button id="processOrderBtn" class="btn">Process Order</button>
+</section>
+
+<footer>
+  <p>© 2026 Book Haven Bookstore</p>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
