@@ -1,6 +1,5 @@
 document.addEventListener("DOMContentLoaded", function () {
 
-    // ADD TO CART
     const addCartButtons = document.querySelectorAll(".addCartBtn");
 
     addCartButtons.forEach(function(button) {
@@ -18,8 +17,6 @@ document.addEventListener("DOMContentLoaded", function () {
         });
     });
 
-
-    // VIEW CART
     const viewCartBtn = document.getElementById("viewCartBtn");
     const cartModal = document.getElementById("cartModal");
     const closeCart = document.getElementById("closeCart");
@@ -46,11 +43,10 @@ document.addEventListener("DOMContentLoaded", function () {
         });
     }
 
-    // CLOSE CART
     if (closeCart) {
         closeCart.addEventListener("click", function () {
             cartModal.style.display = "none";
         });
     }
 
-});
+});                
